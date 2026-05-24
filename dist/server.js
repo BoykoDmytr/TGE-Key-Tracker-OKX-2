@@ -248,7 +248,7 @@ app.post('/webhooks/tenderly', express.raw({ type: 'application/json' }), async 
                 `Amount: ${escHtml(amountLine)}\n` +
                 `Network: ${escHtml(networkPretty)}\n` +
                 `<a href="${escHtml(explorer)}">${escHtml('View on Scan')}</a>\n\n` +
-                `@cryptohornettg`;
+                `<a href="https://t.me/cryptohornettg/1354">Refback 45%</a>`;
             req.log.info({ messagePreview: message.slice(0, 200) }, 'sending telegram');
             await sendTelegram(message);
             sentCount++;
