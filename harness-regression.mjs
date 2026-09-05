@@ -1,5 +1,8 @@
 // REGRESSION HARNESS (bot2 chains) — every real historical deposit must still yield 1 message.
 delete process.env.REDIS_URL;
+// HARD GUARD
+if (String(process.env.TELEGRAM_CHAT_ID||"").startsWith("-100")) { console.error("REFUSING: real channel id present"); process.exit(1); }
+delete process.env.FILTER_MODE;
 delete process.env.TELEGRAM_BOT_TOKEN;
 delete process.env.TELEGRAM_CHAT_ID;
 process.env.THRESHOLDS_JSON = '{}';
